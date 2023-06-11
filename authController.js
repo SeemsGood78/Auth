@@ -56,9 +56,10 @@ class authController {
         }
     }
 
-    async getUsers(reg, res) {
+    async getUsers(req, res) {
         try {
-            res.json("server wok")
+            const users = await User.find()
+            res.json(users)
         } catch (e) {
             console.log(e)
         }
